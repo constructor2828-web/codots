@@ -9,7 +9,7 @@ sidebar:
 
 1. Fetch codots:
    ```bash
-   git clone https://github.com/constructor2828-web/codots ~/.codots
+   nix-shell -p git --run "git clone https://github.com/constructor2828-web/codots ~/.codots"
    cd ~/.codots
    ```
 
@@ -24,6 +24,7 @@ sidebar:
 On a system that already has NixOS installed:
 
 ```bash
+nix-shell -p git --run "git clone https://github.com/constructor2828-web/codots ~/.codots"
 cd ~/.codots
 make update
 make switch
