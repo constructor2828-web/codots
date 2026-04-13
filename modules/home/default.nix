@@ -28,7 +28,7 @@
     jq
     unzip
     p7zip
-    neofetch
+    fastfetch
     tree
     file
     binwalk
