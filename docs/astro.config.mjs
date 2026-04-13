@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightThemeBlack from "starlight-theme-black"
 export default defineConfig({
+	site: "https://codots.pages.dev",
 	integrations: [
 		starlight({
 			title: "codots",
