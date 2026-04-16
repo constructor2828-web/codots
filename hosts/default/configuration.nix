@@ -11,6 +11,18 @@
     # ../../modules/server  # uncomment for server setups
   ];
 
+
+  assertions = [
+    {
+      assertion = username != "user";
+      message = "Set `username` in flake.nix before running nixos-rebuild (default `user` is a placeholder).";
+    }
+    {
+      assertion = hostname != "nixos";
+      message = "Set `hostname` in flake.nix before running nixos-rebuild (default `nixos` is a placeholder).";
+    }
+  ];
+
   # Nix settings
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
