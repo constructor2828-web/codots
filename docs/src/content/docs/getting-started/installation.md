@@ -35,3 +35,23 @@ Or directly:
 ```bash
 sudo nixos-rebuild switch --flake .#<hostname>
 ```
+
+### Troubleshooting: Home Manager packages not installing
+
+If `home-manager-<username>.service` is missing, usually one of these is true:
+
+1. You still have placeholder values in `flake.nix` (`username = "user"` and/or `hostname = "nixos"`).
+2. You changed `flake.nix` but did not run a new rebuild.
+3. You are checking `systemctl` as a different user than the one configured in `flake.nix`.
+
+After editing `flake.nix`, rebuild again:
+
+```bash
+sudo nixos-rebuild switch --flake .#<hostname>
+```
+
+Then verify with your configured user:
+
+```bash
+systemctl status home-manager-<username>.service
+```
